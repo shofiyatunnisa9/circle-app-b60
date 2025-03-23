@@ -1,0 +1,22 @@
+.my-form
+{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 10px;
+  margin: 70px 0;
+  align-items: center;
+}
+/* .form-input{
+    padding: 5px;
+    width: 100%;
+    font-size: 15px;
+   
+    border-radius: 5px;
+}
+.form-button{
+    background-color: blue;
+    color: aliceblue;
+    padding: 4px 30px;
+    border-radius: 5px;
+} */
