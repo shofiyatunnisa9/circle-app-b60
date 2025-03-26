@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.form-login{
+    text-decoration: darkgreen;
+}

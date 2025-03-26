@@ -10,13 +10,17 @@ export const useSuhuCounterStore = create<SuhuCounterStore>()(
         set((state) => ({ counter: state.counter + 1 }));
       },
       decrement: () => {
-        set((state) => ({ counter: state.counter + 1 }));
+        set((state) => ({ counter: state.counter - 1 }));
       },
       incrementByAmount: (amount: number) => {
-        set((state) => ({ counter: state.counter + 1 }));
+        set((state) => ({ counter: state.counter + amount }));
       },
-      decrementByAmount: () => {},
-      reset: () => {},
+      decrementByAmount: (amount: number) => {
+        set((state) => ({ counter: state.counter - amount }));
+      },
+      reset: () => {
+        set(() => ({ counter: 20 }));
+      },
     }),
     { name: "suhu-counter-store" }
   )

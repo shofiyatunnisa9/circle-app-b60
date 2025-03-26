@@ -3,6 +3,9 @@ import MyCounter from "../components/MyCounter";
 import MyForm from "../components/MyForm";
 import UserData from "../components/UserData";
 import { NavLink } from "react-router-dom";
+import Login from "../components/auth/Login";
+import Register from "./Register";
+import Layout from "@/layouts/Layout";
 
 function Home() {
   return (
@@ -12,10 +15,13 @@ function Home() {
         alignItems: "center",
       }}
     >
-      <NavLink to="/about">Ke Halaman About</NavLink>
-      <UserData />
-      <MyCounter />
-      <MyForm />
+      <NavLink to="/login">Ke Halaman Login</NavLink>
+      {/* <Login />
+      <Register /> */}
+      {/* <Layout children={undefined} /> */}
+      {/* <UserData /> */}
+      {/* <MyCounter /> */}
+      {/* <MyForm /> */}
     </main>
   );
 }

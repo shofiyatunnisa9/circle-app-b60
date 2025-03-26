@@ -7,4 +7,4 @@ interface SuhuCounterStore {
   decrementByAmount: (amount: number) => void;
 }
 
-export default SuhuCounterStore;
+export type { SuhuCounterStore };
