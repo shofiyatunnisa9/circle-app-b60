@@ -11,8 +11,8 @@ export default function UserList({ users }: UserListProps) {
       {users.map((user) => (
         <li>
           <h2>{user.username}</h2>
-          <p>phone: {user.phone}</p>
           <p>email: {user.email}</p>
+          <p>password:{user.password}</p>
         </li>
       ))}
     </ul>

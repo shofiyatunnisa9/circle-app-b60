@@ -1,34 +1,39 @@
 import { createBrowserRouter } from "react-router-dom";
-
-import Login from "../components/auth/Login";
+import Home from "./Home";
+import Login from "./Login";
 import Register from "./Register";
 import Forgot from "./Forgot";
 import Reset from "./Reset";
-
+import Profile from "./Profile";
 import ProtectedRouteLayout from "./ProtectedRouteLayout";
-import { Underline } from "lucide-react";
-import Layout from "@/layouts/Layout";
+import { Search } from "lucide-react";
+
 let router = createBrowserRouter([
   {
     Component: ProtectedRouteLayout,
     children: [
       {
         path: "/",
-        element: <Layout children={undefined} />,
+        Component: Home,
+        // element: <Layout children={undefined} />,
+      },
+      {
+        path: "/search",
+        Component: Search,
+      },
+
+      {
+        path: "/profile",
+        Component: Profile,
       },
     ],
   },
-  // {
-  //   //halaman home
-  //   path: "/",
-  //   element: <Layout children={undefined} />,
-  // },
 
-  // {
-  //   //halaman Login
-  //   path: "/login",
-  //   Component: Login,
-  // },
+  {
+    //halaman Register
+    path: "/login",
+    Component: Login,
+  },
   {
     //halaman Register
     path: "/register",

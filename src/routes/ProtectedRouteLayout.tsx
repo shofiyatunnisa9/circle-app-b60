@@ -5,6 +5,9 @@ import { Navigate, Outlet } from "react-router-dom";
 
 function ProtectedRouteLayout() {
   const { user } = useUserStore();
+
+  //const {isError, isFetched} = useGetMe()
+
   useEffect(() => {
     console.log(user);
   }, []);

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import React from "react";
-import "../components/auth/Login";
+import "../components/auth/LoginForm";
 
 const Register = () => {
   return (
@@ -12,7 +12,6 @@ const Register = () => {
       <Input className="w-sm" type="name" id="name" placeholder="Fullname" />
       <Input type="email" id="email" placeholder="Email" />
       <Input type="password" id="password" placeholder="Password" />
-      <p className="text-right text-sm text-white">Forgot Password</p>
       <Button className="basis-128 bg-green-400">Create</Button>
       <p className="text-left text-white">
         Already have account ?{" "}

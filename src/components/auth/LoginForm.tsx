@@ -3,17 +3,19 @@ import React, { useContext, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { AuthContext } from "../../contexts/auth";
-
+// import { useNavigate } from "react-router-dom";
 import "../../routes/Register";
 import "../../routes/Forgot";
+import { useUserStore } from "@/stores/auth";
 interface LoginFormState {
   username: string;
   email: string;
   password: string;
 }
 
-function Login() {
-  const { user, setUser } = useContext(AuthContext);
+function LoginForm() {
+  const { user, setUser } = useUserStore();
+  // const navigate = useNavigate();
 
   const [formState, setFormState] = useState<LoginFormState>({
     username: "username not found",
@@ -31,9 +33,10 @@ function Login() {
     event.preventDefault();
     console.log(`Halo berikut data saya :`, formState); // object yang berisi data form : username, email, phone
     setUser(formState);
+    // navigate("/");
   };
   return (
-    <div
+    <form
       className="grid w-screen h-screen gap-3 p-40 place-content-center bg-gray-950  "
       onSubmit={handleSubmit}
     >
@@ -41,30 +44,33 @@ function Login() {
       <p className="text-white">Login to Circle</p>
       <p></p>
       <Input
-        className="w-sm"
+        className="w-sm text-white"
         type="username"
         id="username"
         onChange={handleChange}
         placeholder="Username"
       />
       <Input
-        className="w-sm"
+        className="w-sm text-white"
         type="email"
         id="email"
         onChange={handleChange}
         placeholder="Email/Username"
       />
       <Input
-        type="password"
+        className="w-sm text-white"
+        type="passwors"
         id="password"
-        placeholder="Password"
         onChange={handleChange}
+        placeholder="Password"
       />
       <a className="text-white text-right text-sm " href={"/forgot"}>
         Forgot Password
       </a>
       {/* <p className="text-right text-sm text-white">Forgot Password</p> */}
-      <Button className="basis-128 bg-green-400">Login</Button>
+      <Button className="basis-128 bg-green-400" type="submit">
+        Submit
+      </Button>
       <p className="text-left text-white">
         Don't have an account yet ?{" "}
         <a className="text-green-400" href={"/register"}>
@@ -74,8 +80,8 @@ function Login() {
           Register
         </Button> */}
       </p>
-    </div>
+    </form>
   );
 }
 
-export default Login;
+export default LoginForm;

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import "../components/auth/Login";
+import "../components/auth/LoginForm";
 import React from "react";
 
 const Forgot = () => {
