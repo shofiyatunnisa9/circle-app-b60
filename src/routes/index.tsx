@@ -5,8 +5,10 @@ import Register from "./Register";
 import Forgot from "./Forgot";
 import Reset from "./Reset";
 import Profile from "./Profile";
+import Follow from "./Follow";
+import Search from "./Search";
+
 import ProtectedRouteLayout from "./ProtectedRouteLayout";
-import { Search } from "lucide-react";
 
 let router = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ let router = createBrowserRouter([
       {
         path: "/profile",
         Component: Profile,
+      },
+      {
+        path: "/follow",
+        Component: Follow,
       },
     ],
   },

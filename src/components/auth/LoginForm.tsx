@@ -3,10 +3,11 @@ import React, { useContext, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { AuthContext } from "../../contexts/auth";
-// import { useNavigate } from "react-router-dom";
+// import { Navigate, useNavigate } from "react-router-dom";
 import "../../routes/Register";
 import "../../routes/Forgot";
 import { useUserStore } from "@/stores/auth";
+import { Link } from "react-router-dom";
 interface LoginFormState {
   username: string;
   email: string;
@@ -33,6 +34,7 @@ function LoginForm() {
     event.preventDefault();
     console.log(`Halo berikut data saya :`, formState); // object yang berisi data form : username, email, phone
     setUser(formState);
+
     // navigate("/");
   };
   return (
@@ -59,27 +61,33 @@ function LoginForm() {
       />
       <Input
         className="w-sm text-white"
-        type="passwors"
+        type="password"
         id="password"
         onChange={handleChange}
         placeholder="Password"
       />
-      <a className="text-white text-right text-sm " href={"/forgot"}>
-        Forgot Password
-      </a>
+      <div>
+        <p className="text-white text-right text-sm">
+          <Link to={"/forgot"}>Forgot Password </Link>
+        </p>
+      </div>
+
       {/* <p className="text-right text-sm text-white">Forgot Password</p> */}
       <Button className="basis-128 bg-green-400" type="submit">
-        Submit
+        Login
       </Button>
-      <p className="text-left text-white">
-        Don't have an account yet ?{" "}
-        <a className="text-green-400" href={"/register"}>
-          Register
-        </a>
-        {/* <Button variant="link" className="text-green-400">
+      <div>
+        <p className="text-white">
+          Don't have an account yet ?
+          <Link className="text-green-400" to={"/register"}>
+            Register
+          </Link>
+        </p>
+      </div>
+
+      {/* <Button variant="link" className="text-green-400">
           Register
         </Button> */}
-      </p>
     </form>
   );
 }

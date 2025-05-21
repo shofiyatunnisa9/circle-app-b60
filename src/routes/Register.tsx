@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import React from "react";
 import "../components/auth/LoginForm";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   return (
@@ -13,12 +13,14 @@ const Register = () => {
       <Input type="email" id="email" placeholder="Email" />
       <Input type="password" id="password" placeholder="Password" />
       <Button className="basis-128 bg-green-400">Create</Button>
-      <p className="text-left text-white">
-        Already have account ?{" "}
-        <a className="text-green-400" href={"/login"}>
-          Login
-        </a>
-      </p>
+      <div>
+        <p className="text-white text-left">
+          Already have account ?
+          <Link className="text-green-400" to={"/login"}>
+            Login
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

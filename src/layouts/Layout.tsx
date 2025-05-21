@@ -1,7 +1,6 @@
 import React from "react";
 import LeftBar from "./components/LeftBar";
 import RightBar from "./components/RightBar";
-import Home from "../routes/Home";
 
 interface AppLayoutProps {
   children: React.ReactNode; //component yang ada di dalam component tsb
@@ -9,12 +8,10 @@ interface AppLayoutProps {
 function Layout({ children }: AppLayoutProps) {
   return (
     <div className="flex">
-      {/* SideBar Kiri */}
       <LeftBar />
-      {/* Komponen Utama */}
-      {/* <Home /> */}
-      <section className="flex-1">{children}</section>
-      {/* SideBar Kanan */}
+
+      <section className="flex-1 border-x border-gray-700">{children}</section>
+
       <RightBar />
     </div>
   );

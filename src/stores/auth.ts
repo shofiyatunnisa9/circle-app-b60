@@ -14,6 +14,6 @@ export const useUserStore = create<UserStore>()(
       setUser: (user) => set(() => ({ user: user })),
       clearUser: () => set(() => ({ user: {} as User })),
     }),
-    { name: "autth-store" }
+    { name: "auth-store" }
   )
 );
